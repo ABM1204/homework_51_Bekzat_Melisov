@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+</head>
+<body>
+    <h1>Create Cat</h1>
+    <form action="/cat/create/" method="post">
+    {% csrf_token %}
+     <label>Cat name:</label>
+        <br/>
+    <input type="text" name="cat_name"/>
+        <br/>
+    <input type="submit" value="Send"/>
+</form>
+</body>
+</html>
+

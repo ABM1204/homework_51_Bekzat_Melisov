@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+</head>
+<body>
+    <img src="{% static image %}" class="img">
+    <h1>About cat:</h1>
+    <h2>Name: {{ cat_name }}</h2> 
+    <h2>Age: {{ age }} years old</h2>
+    <h2>Satiety level: {{ satiety_level }} points</h2>
+    <h2>Happy points: {{ happy_point }} points</h2>
+    <form action="/cat/action/" method="post">
+        {% csrf_token %}
+        <label for="cat">Select action:</label>
+        <select id="cat" name="action">
+            <option value="feed">Feed cat</option>
+            <option value="play">Play with cat</option>
+            <option value="sleep">Put the cat to bed</option>
+        </select>
+        <input type="submit" value="Send"/>
+    </form>
+</body>
+</html>
